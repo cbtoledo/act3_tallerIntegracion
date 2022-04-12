@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <!-- socket.io no se necesita para la tarea-->
+        <script src="https://integracion-actividad-3.herokuapp.com/trucks/socket.io.js"></script>
+        <script>
+        
+        var socket = io("https://integracion-actividad-3.herokuapp.com", { path: "/trucks" });
+        socket.on('POSITION', function(msg){
+                console.log('CAMION ' + msg.code + ' posicion: ' + msg.position[0] + ',' +  msg.position[1]);
+                document.write('CAMION ' + msg.code + ' posicion: ' + msg.position[0] + ',' +  msg.position[1] + '<br>');
+            });     
+
+        </script>
+        <!--mostrar en pantalla lo que se muestra con el console.log-->
+    </body>
+</html>
